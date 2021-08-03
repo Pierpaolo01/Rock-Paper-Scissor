@@ -31,23 +31,26 @@
 
     <div class="gameboard">
 
-      <div class="rps-outerCircle" id="paper">
+      <div class="rps-items-container">
+
+        <div class="rps-outerCircle" id="paper" onclick="rpsGame(this);">
+            <div class="rpsContainer">
+              <img src="images/icon-paper.svg" alt="Paper" >
+          </div>
+        </div>
+
+        <div class="rps-outerCircle" id="scissor" onclick="rpsGame(this);">
           <div class="rpsContainer">
-            <img src="images/icon-paper.svg" alt="Paper" >
+            <img src="images/icon-scissors.svg" alt="Paper" >
+          </div>
         </div>
-      </div>
 
-      <div class="rps-outerCircle" id="scissor">
-        <div class="rpsContainer">
-          <img src="images/icon-scissors.svg" alt="Paper" >
+        <div class="rps-outerCircle" id="rock" onclick="rpsGame(this);">
+          <div class="rpsContainer">
+            <img src="images/icon-rock.svg" alt="Paper" >
+          </div>
         </div>
-      </div>
-
-      <div class="rps-outerCircle" id="rock">
-        <div class="rpsContainer">
-          <img src="images/icon-rock.svg" alt="Paper" >
-        </div>
-      </div>
+    </div>
     
     </div>
 
