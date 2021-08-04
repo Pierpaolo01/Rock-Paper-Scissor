@@ -100,7 +100,7 @@ function showResult(finalMessage, userChoice, botChoice){
     //end result as in you win / lose & reset BTN 
 
     let lastDiv = document.createElement('div');
-    lastDiv.style.marginTop = '25px';
+    lastDiv.style.marginTop = '35px';
 
 
 
@@ -123,5 +123,12 @@ function showResult(finalMessage, userChoice, botChoice){
 
 
     document.querySelector('.gameboard').appendChild(endScreen);
+
+}
+
+function resetGame(){
+
+    document.querySelector('.endScreen').remove();
+    document.querySelector('.rps-items-container').style.display = 'flex';
 
 }
