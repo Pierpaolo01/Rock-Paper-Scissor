@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors - Project
 
-[Rock, Paper, Scissors challenge on Frontend Mentor](design/original/desktop-preview.jpg)
+![Rock, Paper, Scissors challenge on Frontend Mentor](design/original/desktop-preview.jpg)
 
 
 ## Table of contents
