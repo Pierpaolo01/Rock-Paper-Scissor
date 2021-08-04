@@ -1,5 +1,6 @@
 
 const rpsArray = ['rock', 'paper', 'scissor'];
+let score = 3;
 
 function rpsGame(userChoice){
 
@@ -29,16 +30,22 @@ function decideWinner(userChoice, botChoice){
 function endMessage(outcome){
 
     if(outcome === 1){
-    
+        score = score +1;
+        document.querySelector('#counter').textContent = score;
         return {'message': 'You Win !', 'color': 'green'};
-
-    }else if(outcome === 0){
-        return {'message': 'You Lost !', 'color': 'red'};
-
-    }else if(outcome === 0.5){
-        return {'message': 'You Drew !', 'color': 'orange'};
         
+    }else if(outcome === 0){
+        score = score -1;
+        document.querySelector('#counter').textContent = score;
+        return {'message': 'You Lost !', 'color': 'red'};
+        
+    }else if(outcome === 0.5){
+        document.querySelector('#counter').textContent = score;
+        return {'message': 'You Drew !', 'color': 'orange'};
     }
+
+    
+
 
 }
 
@@ -114,7 +121,7 @@ function showResult(finalMessage, userChoice, botChoice){
 
 
     let resetBtn = document.createElement('button');
-    resetBtn.setAttribute('class', 'btn btn-warning');
+    resetBtn.setAttribute('class', 'btn-lg btn-light');
     resetBtn.setAttribute('onclick', 'resetGame();');
     resetBtn.textContent = 'Reset Game';
 
@@ -132,3 +139,36 @@ function resetGame(){
     document.querySelector('.rps-items-container').style.display = 'flex';
 
 }
+
+
+function rules(){
+
+    const showRules = document.createElement('div');
+    showRules.setAttribute('class', 'rulesDiv');
+    showRules.style.zIndex = '3';
+    const rulesH2 = document.createElement('h2');
+    rulesH2.textContent = 'RULES';
+    rulesH2.style.color = '#15193C';
+
+    const rulesImg = document.createElement('img');
+    rulesImg.src = 'images/image-rules.svg';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.setAttribute('class', 'btn-close');
+    closeBtn.setAttribute('onclick', 'closeRules();');
+
+
+    showRules.appendChild(rulesH2);
+    showRules.appendChild(rulesImg);
+    showRules.appendChild(closeBtn);
+    document.querySelector('.container').appendChild(showRules);
+}
+
+function closeRules(){
+
+    const rulesDiv = document.querySelector('.rulesDiv');
+    rulesDiv.remove();
+
+
+}
+
