@@ -145,8 +145,98 @@ body{
 }
 
 .rulesDiv button {
+    border: 3px dotted black;
     margin-top: 100px;
 }
+
+
+
+
+@media only screen and (min-width: 475px){
+
+    .container {
+        max-width: 690px;
+    }
+
+    .gameboard {
+        align-items: center;
+        margin-top: 100px;
+        background-size: 350px;
+    }
+    
+    .rps-items-container {
+        max-width: 590px;
+        margin: 0px auto 30px auto;
+    }
+
+    .rps-outerCircle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .rpsContainer {
+        
+        width: 155px;
+        height: 155px;
+    }
+    
+    .rpsContainer img{
+        width: 80px;
+        height: 90px;
+    }
+
+    #rulesDiv{
+        margin-top: 150px;
+    }
+
+    .endScreen {
+        max-width: 540px;
+        align-items: center;
+        /* position: absolute; */
+    }
+
+    .endScreen h4 {
+        text-align: center;
+    }
+
+    .rulesDiv {
+        margin-top: 150px;
+        max-width: 500px;
+        max-height: 500px;
+        border-radius: 20px;
+    }
+
+    .rulesDiv h2{
+        margin: 10px auto;
+        float: left;
+    }
+
+    .rulesDiv button {
+        float: right;
+        margin: 10px auto;
+        border: 3px dotted black;
+    }
+
+    .rulesDiv img {
+        height: 330px;
+        margin: 30px auto;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
