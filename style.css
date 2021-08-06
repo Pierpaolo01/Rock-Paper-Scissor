@@ -162,6 +162,7 @@ body{
         align-items: center;
         margin-top: 100px;
         background-size: 350px;
+        background-position: bottom;
     }
     
     .rps-items-container {

@@ -59,61 +59,25 @@ function showResult(finalMessage, userChoice, botChoice){
         'scissor': 'images/icon-scissors.svg',
     }
 
+    
     let endScreen = document.createElement('div');
     endScreen.setAttribute('class', 'endScreen rps-items-container');
 
-    let yourParent = document.createElement('div');
-    let yours = document.createElement('h4');
-    yours.textContent = 'You Chose';
-    yourParent.appendChild(yours);
-
-    let yourEndScreen = document.createElement('div');
-    yourEndScreen.setAttribute('class', 'rps-outerCircle');
-    yourEndScreen.setAttribute('id', userChoice);
-    let yourEndScreenChild = document.createElement('div');
-    yourEndScreenChild.setAttribute('class', 'rpsContainer');
-
-
-    let rpsImg = document.createElement('img');
-    rpsImg.setAttribute('src', rpsSRC[userChoice]);
-
-    yourEndScreenChild.appendChild(rpsImg);
-    yourEndScreen.appendChild(yourEndScreenChild);
-    yourParent.appendChild(yourEndScreen);
-    endScreen.appendChild(yourParent);
-
-
-    let botParent = document.createElement('div');
-    let house = document.createElement('h4');
-    house.textContent = 'House Chose';
-    botParent.appendChild(house);
-
-    let botEndScreen = document.createElement('div');
-    botEndScreen.setAttribute('class', 'rps-outerCircle');
-    botEndScreen.setAttribute('id', botChoice);
-    let botEndScreenChild = document.createElement('div');
-    botEndScreenChild.setAttribute('class', 'rpsContainer');
-
-
-    let botRpsImg = document.createElement('img');
-    botRpsImg.setAttribute('src', rpsSRC[botChoice]);
-
-    botEndScreenChild.appendChild(botRpsImg);
+    createEndElement('You Chose', userChoice, rpsSRC, endScreen);
     
-    botEndScreen.appendChild(botEndScreenChild);
-    botParent.appendChild(botEndScreen);
-    endScreen.appendChild(botParent);
+    createEndElement('Bot Chose', botChoice, rpsSRC, endScreen);
 
     //end result as in you win / lose & reset BTN 
 
     let lastDiv = document.createElement('div');
-    lastDiv.style.marginTop = '35px';
+    lastDiv.style.marginTop = '40px';
 
 
 
     let endResult = document.createElement('h2');
     endResult.textContent = finalMessage.message;
     endResult.style.color = finalMessage.color;
+    endResult.style.textAlign = 'center';
 
     lastDiv.appendChild(endResult);
 
@@ -172,3 +136,26 @@ function closeRules(){
 
 }
 
+
+function createEndElement (h4Text, choice, rpsSRC, endScreen){
+
+    const yourParent = document.createElement('div');
+    const head = document.createElement('h4');
+    head.textContent = h4Text;
+    yourParent.appendChild(head);
+
+    const ParentEndScreen = document.createElement('div');
+    ParentEndScreen.setAttribute('class', 'rps-outerCircle');
+    ParentEndScreen.setAttribute('id', choice);
+    const endScreenChild = document.createElement('div');
+    endScreenChild.setAttribute('class', 'rpsContainer');
+
+    const rpsImg = document.createElement('img');
+    rpsImg.setAttribute('src', rpsSRC[choice]);
+
+    endScreenChild.appendChild(rpsImg);
+    ParentEndScreen.appendChild(endScreenChild);
+    yourParent.appendChild(ParentEndScreen);
+    endScreen.appendChild(yourParent);
+
+}
